@@ -22,3 +22,23 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## GitHub命令
+
+### 1、下载库 git clone https://github.com/youzan-team/yz.git
+
+### 2、（给网址取别名）git remote add origin https://github.com/youzan-team/yz.git
+
+### 3、git branch test（创建分支）
+
+### 4、git checkout test（切换分支）
+
+### 5、git pull （更新 下载）
+
+### 6、git push origin 分支名（上传）
+
+### 7、git merge master（合并分支）
+
+
+
+
