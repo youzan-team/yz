@@ -1,4 +1,4 @@
-const index2={
+const product={
     state:{
     },
     mutations:{
@@ -9,4 +9,4 @@ const index2={
     }
   }
   
-  export default index2
+  export default product
