@@ -7,6 +7,7 @@ import Product from "@/views/product/Product.vue"
 import Shop from "@/views/shop/Shop.vue"
 
 
+
 Vue.use(VueRouter) //在vue中使用vue-router
 
 const router = new VueRouter({
