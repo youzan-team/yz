@@ -1,5 +1,7 @@
-const index4={
+
+const customer={
     state:{
+      
     },
     mutations:{
       
@@ -9,4 +11,4 @@ const index4={
     }
   }
   
-  export default index4
+  export default customer

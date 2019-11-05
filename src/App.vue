@@ -1,15 +1,29 @@
 <template>
   <div id="app">
-      <router-view></router-view>
+     
+   <el-container>
+      <el-aside width="92px"><shopNav></shopNav></el-aside>
+      <el-container>
+        <el-header>
+          <shopHeader></shopHeader>
+        </el-header>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+       </el-container>
+    </el-container>
+     
   </div>
 </template>
 
 <script>
-
+import shopNav from "@/components/ShopNav.vue"
+import shopHeader from "@/components/ShopHeader.vue"
 export default {
   name: 'app',
   components: {
-      
+      shopNav,
+      shopHeader 
 
   }
 }
@@ -44,4 +58,28 @@ ul,li{
 a{
   text-decoration: none;
 } 
+.el-header {
+    height:56px;
+  }
+  
+  .el-aside {
+    background-color: #D3DCE6;
+   
+  }
+  
+  .el-main {
+    background-color: #E9EEF3;
+    
+  }
+  
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+  
+  /* .el-container:nth-child(5) .el-aside,
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  } */
+  
+
 </style>

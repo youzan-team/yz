@@ -1,4 +1,4 @@
-const index3={
+const order={
     state:{
     },
     mutations:{
@@ -9,4 +9,4 @@ const index3={
     }
   }
   
-  export default index3
+  export default order
