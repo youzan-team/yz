@@ -39,14 +39,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  text-align: center;
-  color: #2c3e50;
-  /* margin-top: 60px; */
-  /* text-align: center; */
-  /* color: #2c3e50; */
-  /* margin-top: 60px; */
-  
-
 }
 html,body{
     margin: 0;
@@ -76,10 +68,7 @@ a{
     margin-bottom: 40px;
   }
   
-  /* .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  } */
+  
   
 
 </style>
