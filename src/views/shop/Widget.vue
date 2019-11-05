@@ -1,18 +1,18 @@
 <template>
 <div class="widget">
     <el-row  class="row-header">
-        <el-col :span="12">
-            <div class="">
+        <el-col :span="24">
+           
                 <span>实时概况</span>
                 <span>更新时间:<span>2019-11-05 15:33:17</span></span>
                 <span class="fa fa-cog"></span>
                 <span>编辑</span>
-            </div>
+            
         </el-col>
     </el-row>
 
    <el-row  class="row-main">
-        <el-col :span="12"><div class=""><widgetLeft></widgetLeft></div></el-col>
+        <el-col :span="12"><div class="widge-line"><widgetLeft></widgetLeft></div></el-col>
         <el-col :span="12"><div class=""><widgetRight></widgetRight></div></el-col>
     </el-row>
 
@@ -35,10 +35,13 @@ export default {
 
 <style lang="scss" scoped>
     .widget{
-         height: 280px;
+         background: #fff;
+         height: 350px;
+         padding-bottom: 20px;
          >.row-header{
             height: 24px; 
-            // background: #fff;
+            line-height: 24px;
+            padding:10px 20px 0 10px; 
             margin-bottom:20px ;
             span{ 
                 &:nth-child(1){
@@ -60,7 +63,9 @@ export default {
             }
          }
          >.row-main{
-             background: #fff;
+             .widge-line{
+                 border-right: #efefef 1px solid;
+             }
          }
     }
 </style>

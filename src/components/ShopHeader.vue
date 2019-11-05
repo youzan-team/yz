@@ -43,14 +43,14 @@ export default {
         color: #323233;
         font-size: 15px;
         display: inline-block;
-        border: 1px solid #323233;
+        border:  #efefef 1px solid;
         
        } 
       &:nth-child(4){
         color: #323233;
         font-size: 15px;
         display: inline-block;
-        border: 1px solid #323233;   
+        border: #efefef 1px solid;  
        }  
 
     }

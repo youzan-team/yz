@@ -30,14 +30,15 @@ export default {
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding:0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  /* color: #2c3e50; */
-  /* margin-top: 60px; */
-  
+
 }
 html,body{
     margin: 0;
@@ -51,26 +52,26 @@ a{
 } 
 .el-header {
     height:56px;
+   margin: 0 0 0 92px;
   }
   
   .el-aside {
     background-color: #D3DCE6;
+    position: fixed;
+    left: 0;top: 0;
    
   }
   
   .el-main {
     background-color: #E9EEF3;
-    
+    margin: 0 0 0 92px;
   }
   
   body > .el-container {
     margin-bottom: 40px;
   }
   
-  /* .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  } */
+  
   
 
 </style>
