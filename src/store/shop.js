@@ -1,5 +1,7 @@
-const index1={
+
+const shop={
     state:{
+     
     },
     mutations:{
       
@@ -9,4 +11,4 @@ const index1={
     }
   }
   
-  export default index1
+  export default shop
