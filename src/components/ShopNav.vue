@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="col-con">
-        <div class="bang">2222</div>
+        <div class="bang"><img src="icons.bang_icon" alt=""></div>
         <router-link activeClass='on' tag='div' to='./shop' class="fa fa-institution">店铺</router-link>
         <router-link activeClass='on' tag='div' to='./product' class="fa fa-map-o">商品</router-link>
         <router-link activeClass='on' tag='div' to='./order' class="fa fa-list-alt">订单</router-link>
@@ -12,8 +12,11 @@
  
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-
+    computed: {
+        ...mapState(['icons'])
+    }
 }
 </script>
 
