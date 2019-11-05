@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="2"><div style="background:#444;height:800px"></div></el-col>
+      <el-col :span="2"><div style="background:#444;height:1300px"></div></el-col>
       <el-col :span="18">
       <div class="container">
           <el-row class="aaa">
@@ -12,7 +12,7 @@
               <div class="content">
                 <div class="content-inner">
                   <div class="content-init">
-                    <el-button type="primary" size="medium" style="background:#155bd4">添加客户</el-button>
+                    <Add></Add>
                     <div class="verify">粉丝管理</div>
                     <div class="content-container">
                       <div class="con-title">
@@ -35,9 +35,8 @@
                           </div></el-col>
                         </el-row>
                       </div>
-                      <div class="con-screen">
-
-                      </div>
+                      <Filtrate></Filtrate>
+                      <Table></Table>
                     </div>
                   </div>
                 </div>
@@ -46,22 +45,39 @@
           </el-row>
         </div>
       </el-col>
-      <el-col :span="4"><div style="background:pink;height:800px"></div></el-col>
+      <el-col :span="4"><div style="background:pink;height:1300px"></div></el-col>
     </el-row>
   </div>
 </template>
 
 <script>
+import Filtrate from './Filtrate.vue'
+import Table from './Table.vue'
+import Add from './Add.vue'
+
 export default {
-  name: 'customer'
+  name: 'customer',
+  components:{
+    Filtrate,
+    Table,
+    Add
+  },
+  // data:function(){
+  //   return {
+  //     dialogVisible: false
+  //   }
+  // },
+  
 }
 </script>
 
 <style lang="scss" scoped>
-*{font-size: 14px}
+* {
+  font-size: 14px;
+}
 .container {
   background: #fff;
-  height: 800px;
+  //height: 1300px;
   .aaa {
     border: 1px solid #dcdfe6;
     .container-top {
@@ -70,86 +86,80 @@ export default {
       line-height: 55px;
     }
   }
-  .content{
-    height: 700px;
-    background: #f7f8fa;    //#f7f8fa
+  .content {
+    //height: 1200px;
+    background: #f7f8fa; //#f7f8fa
     padding: 16px;
-    .content-inner{
+    .content-inner {
       background: #fff;
       width: 100%;
       height: 100%;
       padding: 16px;
       box-sizing: border-box;
-      .content-init{
+      .content-init {
         background: #fff;
         width: 100%;
         height: 100%;
-        .verify{
+        .verify {
           float: right;
           color: #155bd4;
           width: 56px;
           height: 30px;
           line-height: 30px;
         }
-        .content-container{
+        .content-container {
           background: #f7f8fa;
           margin-top: 20px;
           width: 100%;
           height: 100%;
           overflow: hidden;
-          .con-title{
+          .con-title {
             width: 1020px;
             height: 76px;
             margin: 18px 0 0 20px;
             border-bottom: 1px solid #dbdbdb;
-            .button{
+            .button {
               background: #fff;
               height: 57.6px;
               border: 1px solid #fff;
               border-radius: 2px;
               padding: 8px;
               box-sizing: border-box;
-              span{
+              cursor: pointer;
+              span {
                 display: inline-block;
                 width: 14px;
                 height: 14px;
                 border-radius: 50%;
                 background: #dcdee0;
                 margin-left: 3px;
-                font-size: 12px;;
+                font-size: 12px;
                 text-align: center;
                 line-height: 14px;
-                color: #fcfcfc
+                color: #fcfcfc;
               }
-              .span-on{
+              .span-on {
                 color: #fff;
                 background: #155bd4;
               }
-              .num{
-                font-size:10px;
-                margin-top:4px;
-                color: #a0a1a3
+              .num {
+                font-size: 10px;
+                margin-top: 4px;
+                color: #a0a1a3;
               }
-              .num-on{
-                color: #155bd4
+              .num-on {
+                color: #155bd4;
               }
             }
-            .button-on{
+            .button-on {
               border: 1px solid #155bd4;
               background: #e8effa;
-              color: #2a69d8
+              color: #2a69d8;
             }
-          }
-          .con-screen{
-            width: 100px;
-            height: 100px;
-            background: red;
-            margin: 20px 0 20px 20px;
           }
         }
       }
     }
   }
-  
 }
 </style>
