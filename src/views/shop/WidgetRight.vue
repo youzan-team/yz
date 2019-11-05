@@ -13,8 +13,8 @@
            <el-col :span="12"><div class="grid-content">待结算(元)</div></el-col>
         </el-row>
         <el-row :gutter="20" class="font-lg">
-           <el-col :span="12"><div class="grid-content">浏览量</div></el-col>
-           <el-col :span="12"><div class="grid-content">累计</div></el-col>
+           <el-col :span="12"><div class="grid-content">0.00</div></el-col>
+           <el-col :span="12"><div class="grid-content">0.00</div></el-col>
         </el-row>
        
     </div>
