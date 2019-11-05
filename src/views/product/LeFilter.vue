@@ -1,40 +1,69 @@
 <template>
   <div>
-      <el-row :gutter="20">
-          <el-col :span="8">
 
-          </el-col>
-          <el-col :span="8">
-
-          </el-col>
-          <el-col :span="8">
-
-          </el-col>
-      </el-row>
       <el-row :gutter="20">
           <el-col :span="8">
               商品名称或编码：
-              <el-input v-model="input" placeholder="请输入内容"></el-input>
+              <el-input v-model="input"></el-input>
           </el-col>
           <el-col :span="8">
-              商品分组：
-
+              商品分组： 
+              <el-select v-model="value">
+                 <el-option
+                   v-for="item in options"
+                   :key="item.value"
+                   :label="item.label"
+                   :value="item.value">
+                 </el-option>
+              </el-select>  
           </el-col>
           <el-col :span="8">
               商品类型：
-          </el-col>
+              <el-select v-model="value">
+                 <el-option
+                   v-for="item in options"
+                   :key="item.value"
+                   :label="item.label"
+                   :value="item.value">
+                 </el-option>
+              </el-select> 
+          </el-col>   
       </el-row>   
       <el-row :gutter="20">
           <el-col :span="8">
               总销量：
-
+              <el-input v-model="input" style="width:90px"></el-input> -
+              <el-input v-model="input" style="width:90px"></el-input>
           </el-col>
           <el-col :span="8">
               价格：
+              <el-input v-model="input" style="width:90px"></el-input> -
+              <el-input v-model="input" style="width:90px"></el-input>
           </el-col>
           <el-col :span="8">
               库存扣减方式：
+              <el-select v-model="value">
+                 <el-option
+                   v-for="item in options"
+                   :key="item.value"
+                   :label="item.label"
+                   :value="item.value">
+                 </el-option>
+              </el-select> 
           </el-col>
+      </el-row>
+      <el-row :gutter="20" type="flex">
+          <el-col :span="2"><div class="grid-content"></div></el-col>
+          <el-col :span="20">
+              <div class="le_btn">
+                <el-button type="primary">主要按钮</el-button>
+                <el-button plain>朴素按钮</el-button>
+                <el-button type="text">查看已生成报表</el-button>
+                <el-button type="text">清空筛选条件</el-button>
+              </div>
+
+          </el-col>
+          <el-col :span="2"><div class="grid-content"></div></el-col>
       </el-row>      
   </div>
   
@@ -44,7 +73,24 @@
 export default {
   data() {
     return {
-      input: ''
+      input: '',
+      options: [{
+          value: '选项1',
+          label: '全部'
+        }, {
+          value: '选项2',
+          label: '其它'
+        }, {
+          value: '选项3',
+          label: '列表隐藏'
+        }, {
+          value: '选项4',
+          label: '最热商品'
+        }, {
+          value: '选项5',
+          label: '最新商品'
+        }],
+      
     }
   }
 }
@@ -53,6 +99,9 @@ export default {
 <style lang="scss" scoped>
 .el-input{
   width:200px;
+}
+.le_btn{
+  float:left;
 }
 ///////////
  .el-row {
