@@ -18,7 +18,7 @@ export default {
     background: white;
     box-sizing: border-box;
     padding: 20px;
-    border: 1px solid #999999;
+    border: 1px solid #ebedf0;
     span{
       display: inline-block;
       height: 100%;
