@@ -22,6 +22,7 @@
 import { icons } from '@/assets/index.js'
 import assistantMain from './AssistantMain.vue'
 export default {
+   name:'assistant',
    data:function() {
        return {
            icons,
