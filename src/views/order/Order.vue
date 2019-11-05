@@ -1,13 +1,56 @@
 <template>
-    <div>order</div>
+   <div class="order-wrap">
+    <el-row>
+      <el-col :span="2"><div  style="background:#f7f8fa;height:726px"></div></el-col>
+      <el-col :span="18">
+        <div  style="background:red;height:726px">
+          <OrderHeader></OrderHeader>
+          <div class="order-count">
+            <div class="order-find">
+              <!-- 表单 -->
+              <OrderFrom></OrderFrom>
+              <!-- 表格导航 -->
+              <OrderTable></OrderTable>
+            </div>
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="4"><div  style="background:#f7f8fa;height:726px"></div></el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
-export default {
+import OrderHeader from './OrderHeader.vue'
+import OrderFrom from './OrderFrom.vue'
+import OrderTable from './OrderTable.vue'
 
+export default {
+  components:{
+    OrderHeader,
+    OrderFrom,
+    OrderTable
+  }  
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.order-wrap{
+  font-size: 14px;
+  box-sizing: border-box; 
+  .order-count{
+    min-height: 726px;
+    background: #f7f8fa;
+    padding: 16px;
+    box-sizing: border-box;
+    .order-find{
+      background: white;
+      width: 100%;
+      height: 710px;
+      padding: 16px;
+      box-sizing: border-box;    
+    }
+  }
+}
 
 </style>
