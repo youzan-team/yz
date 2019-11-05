@@ -1,14 +1,13 @@
 <template>
 <div>
     <div class="col-con">
-        <span class="bang"></span>
-        <router-link tag='div' to='./shop'>店铺</router-link>
-        <router-link tag='div' to='./product'>商品</router-link>
-        <router-link tag='div' to='./order'>订单</router-link>
-        <router-link tag='div' to='./customer'>客户</router-link>   
+        <div class="bang">2222</div>
+        <router-link activeClass='on' tag='div' to='./shop' class="fa fa-institution">店铺</router-link>
+        <router-link activeClass='on' tag='div' to='./product' class="fa fa-map-o">商品</router-link>
+        <router-link activeClass='on' tag='div' to='./order' class="fa fa-list-alt">订单</router-link>
+        <router-link activeClass='on' tag='div' to='./customer' class="fa fa-user-o">客户</router-link>   
     </div>
-     
-    
+   
 </div> 
  
 </template>
@@ -24,10 +23,18 @@ export default {
    background-color: #444444;
     color: #c8c9cc;
     text-align: center;
-   
+   >.bang{
+       height: 56px;
+       width: 92px;
+   }
    >div{
         height: 40px;
+        width: 92px;
         line-height: 40px;
+    }
+    .on{
+        background: #fff;
+        color:#333333;
     }
 }
 </style>
