@@ -4,7 +4,9 @@
             <div class="grid-content bg-purple-light" style="height: 600px; border: 1px solid #eee">
                 <!-- 头部 -->
                 <el-row type="flex" align="middle" style="background:white;height:57px;border:1px solid black;margin:10px;">
-                    <el-col :span="3">商品管理</el-col>
+                    <el-col :span="3">
+                        <div style="margin-left:20px;">商品管理</div>
+                    </el-col>
                     <el-col :span="18"></el-col>
                     <el-col :span="3">
                         <i class="el-icon-edit"></i>
