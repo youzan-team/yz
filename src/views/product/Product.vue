@@ -1,93 +1,108 @@
 <template>
-  <div>
     <el-row>
-        <el-col :span="2">
-            <div style="background:green;height:700px"></div>
-            </el-col>
-        <el-col :span="18"  style="background:rgb(255,255,255);height:700px">
-            <!-- 头部 -->
-            <div class="le_top">
-                <span>商品管理</span>
-
-                <a href="">帮助和服务</a>
-            </div>
-            <!-- 身体 -->
-            <div class="le_main">
-                <div class="le_warn">
-                    <span>为了营造绿色健康的购物环境，更好地保障消费者利益，我们将于2019年10月31日起下线“跳转到其他网站购买”功能。</span>
-                    <a href="">查看详情</a>
+        <el-col :span="24">
+            <div class="grid-content bg-purple-light" style="height: 800px; border: 1px solid #eee">
+                <!-- 头部 -->
+                <el-row type="flex" align="middle" style="background:white;height:57px;    border:1px solid black;">
+                    <el-col :span="3">商品管理</el-col>
+                    <el-col :span="18"></el-col>
+                    <el-col :span="3">
+                        <i class="el-icon-edit"></i>
+                        帮助和服务
+                    </el-col>
+                </el-row>
+                <!-- 身体 -->
+                <div class="le_body">
+                    <!-- 警告 -->
+                    <div class="le_warn">
+                        <span>
+                            <i class="fa fa-home fa-fw"></i>
+                            为了营造绿色健康的购物环境，更好地保障消费者利益，我们将于2019年10月31  日起下线“跳转到其他网站购买”功能。
+                        </span>
+                        <a href="">查看详情</a>
+                    </div>
+                    <!-- 导航栏 -->
+                    <LeNav style="margin:10px;"></LeNav>
+                    <!-- 筛选栏 -->
+                    <div class="le_filter">
+                        <LeFilter></LeFilter>
+                    </div>
                 </div>
             </div>
-            <!-- 尾部 -->
-            <div class="bottom">
-
-            </div>
-        </el-col>
-        <el-col :span="4">
-            <div style="background:red;height:700px"></div>
         </el-col>
     </el-row>
-  </div>
-    
 </template>
 
 <script>
-// import shopNav from "@/components/ShopNav.vue"
+import LeNav from "./LeNav.vue"
+import LeFilter from "./LeFilter.vue"
+
+
+
 export default {
-    name:'shopNav',
-    components: {
-        // shopNav
+    components:{
+        LeNav,
+        LeFilter,
     }
 }
 </script>
 
 <style lang="scss" scoped>
-// 头部
-.le_top{
-    width:100%;
-    height:60px;
-    background:yellow;
-    span{
-        display:block;
-        float:left;
-        margin:20px;
-    }
-    a{
-        float: right;
-        margin:20px;
-    }
-}
-// 中间
-.le_main{
-    width:100%;
-    height:660px;
-    background:paleturquoise;
-    margin:16px;
-    padding:16px;
+
+// 身体
+.le_body{
+    background:white;
+    padding:5px;
+    margin:10px;
+    // 警告
     .le_warn{
-        width:93%;
-        height:30px;
-        background:pink;
         border:1px solid red;
-        line-height:30px;
-        >span{
-            // width:500px;
-            height:40px;
-            // background: gold;
-            float: left;
+        background:pink;
+        height:50px;
+        line-height:50px;
+        margin:10px;
+        span{
+            float:left;
+            margin-left:10px;
         }
-        >a{
-            float: right;
+        a{
+            float:right;
+            margin-right:10px;
         }
     }
-}
-// 尾部
-.bottom{
-    width:100%;
-    height:40px;
-    background:orchid;
+    // 筛选
+    .le_filter{
+        margin:20px;
+    }
 }
 
+
+
+///////////////////////
+  .el-row {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
 
 </style>
-

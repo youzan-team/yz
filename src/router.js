@@ -5,7 +5,6 @@ import Customer from "@/views/customer/Customer.vue"
 import Order from "@/views/order/Order.vue"
 import Product from "@/views/product/Product.vue"
 import Shop from "@/views/shop/Shop.vue"
-import Text from "@/views/product/text.vue"
 
 
 
@@ -32,10 +31,6 @@ const router = new VueRouter({
       {
         path:'/customer',
         component:Customer
-      },
-      {
-        path:'/text',
-        component:Text
       }
     ]
 }) 
