@@ -39,6 +39,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 7、git merge master（合并分支）
 
+## 早会内容（第一天）
+  * 早会11.5:
+	* 1. 页面布局element的24栏布局
+	* 2. 上午任务html+css 
+	* 3. 成员只允许更改自己页面代码
+
+
 
 
 
