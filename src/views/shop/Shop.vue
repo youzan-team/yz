@@ -1,34 +1,13 @@
 <template>
     <div class="shop" >
-      <el-row>
-            <!-- 左边导航 -->
-           <el-col :span="2">
-              
-            </el-col>
-
-             <!-- 中间内容 -->
-            <el-col :span="18" style=" padding: 0 10px;">
-               <div  style="height:1000px">
-
-                   <!-- head -->
-                 
-
-                    <!-- widget -->
-                   <el-row class="widget ">
-                        <el-col :span="24">
-                            <widget></widget>
-                        </el-col>
-                  </el-row>   
-                </div>
-            </el-col>
-
-             <!-- 右边新闻 -->
-            <el-col :span="4">
-               <div  style="background:pink;height:1000px"></div>
-            </el-col>
+        <el-row :gutter="20">
+            <el-col :span="18">
+                <div class="grid-content bg-purple">
+                     <widget></widget>
+                </div></el-col>
+  
+            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
         </el-row>
- 
-     
     </div>  
 </template>
 
@@ -39,7 +18,7 @@ import widget from "./Widget.vue"
 export default {
     name:'shop',
     components: {
-        // shopNav,
+       
         widget
     }
 }
@@ -47,22 +26,31 @@ export default {
 
 <style lang="scss" scoped>
     .shop{
-        el-row{
-          margin-bottom: 20px;
-          &:last-child{
-              margin-bottom: 0;
-          }
-           el-col{
-            padding: 0 10px;
-           }
+        .el-row {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
-       
-        background: rgb(247,248,255);
-
-       .widget{
-          
-           background: #ccecce;
-       }
+        .el-col {
+            border-radius: 4px;
+        }
+        .bg-purple {
+            background: #d3dce6;
+        }
+        .grid-content {
+            border-radius: 4px;
+            min-height: 36px;
+        }
+        .row-bg {
+            padding: 10px 0;
+            // background-color: #f9fafc;
+        }
     }
+  
+        
+  
+       
+   
 </style>
 

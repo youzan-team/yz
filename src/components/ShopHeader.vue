@@ -6,6 +6,7 @@
                <span>试用期</span>
                <span>SVIP</span>
                <span>有赞担保</span>
+               <div class="fa fa-user-circle-o" >17774949446 <span class="fa fa-angle-right"></span></div> 
             </div>
         </el-col>
     </el-row> 
@@ -52,7 +53,14 @@ export default {
         border: 1px solid #323233;   
        }  
 
-           }
+    }
+    >div{
+        padding: 2px 4px;
+        margin: 0 0 0 5px;
+        color: #323233;
+        font-size: 15px;
+        float: right ;
+    }
 }       
 </style>
 
