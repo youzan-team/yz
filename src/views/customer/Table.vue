@@ -19,6 +19,36 @@
           </template>
         </el-table-column>
       </el-table>
+      <div class="paging">
+        <el-checkbox v-model="checked">当页全选</el-checkbox>
+        <div class="paging1">
+          <el-select v-model="value" placeholder="加标签">
+            <el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value"></el-option>
+          </el-select>
+        </div>
+        <div class="paging1">
+          <el-select v-model="value" placeholder="给积分">
+            <el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value"></el-option>
+          </el-select>
+        </div>
+        <div class="paging1">
+          <el-select v-model="value" placeholder="更多">
+            <el-option v-for="item in options3" :key="item.value" :label="item.label" :value="item.value"></el-option>
+          </el-select>
+        </div>
+        <div class="paging2">
+          <el-row>
+            <el-col :span="14" :offset="10">
+              <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage4" 
+                :page-sizes="[100, 200, 300, 400]"
+                :page-size="100"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="400">
+          </el-pagination>
+            </el-col>
+          </el-row>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,7 +67,7 @@ export default {
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
-        }, 
+        },
         {
           date: '2016-05-02',
           name: '王小虎',
@@ -45,7 +75,7 @@ export default {
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
-        }, 
+        },
         {
           date: '2016-05-04',
           name: '王小虎',
@@ -61,7 +91,7 @@ export default {
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
-        }, 
+        },
         {
           date: '2016-05-08',
           name: '王小虎',
@@ -69,7 +99,7 @@ export default {
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
-        }, 
+        },
         {
           date: '2016-05-06',
           name: '王小虎',
@@ -77,7 +107,7 @@ export default {
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
-        }, 
+        },
         {
           date: '2016-05-07',
           name: '王小虎',
@@ -86,12 +116,51 @@ export default {
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
         }
-      ]
+      ],
+      value:'',
+      checked: true,
+      options1: [{
+        value: '选项1',
+        label: '对选中的人加标签'
+      }, {
+        value: '选项2',
+        label: '对筛选出来的人加标签'
+      }],
+      options2: [{
+        value: '选项1',
+        label: '对选中的人给积分'
+      }, {
+        value: '选项2',
+        label: '对筛选出来的人给积分'
+      }, {
+        value: '选项3',
+        label: '对选中的人清空积分'
+      }, {
+        value: '选项4',
+        label: '对筛选出来的人清空积分'
+      }],
+      options3: [{
+        value: '选项1',
+        label: '对选中的人加标签'
+      }, {
+        value: '选项2',
+        label: '对筛选出来的人加标签'
+      }],
+      currentPage1: 5,
+      currentPage2: 5,
+      currentPage3: 5,
+      currentPage4: 4
     }
   },
   methods: {
     deleteRow(index, rows) {
       rows.splice(index, 1);
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
     }
   }
 }
@@ -114,8 +183,19 @@ export default {
       display: block;
     }
   }
-  .list{
-    height: 400px
+  .list {
+    height: 400px;
+  }
+  .paging {
+    height: 32px;
+    margin-top: 10px;
+    .paging1 {
+      width: 90px;
+      display: inline-block;
+      margin-left: 5px;
+    }
+    .paging2 {
+    }
   }
 }
 </style>
