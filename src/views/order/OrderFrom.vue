@@ -6,12 +6,12 @@
       <span>订单搜索：</span>
       </el-col>
     <el-col :span="6">
-      <el-select v-model="value9" placeholder="请选择" no-data-text="订单号" size="small">
+      <el-select v-model="value9"  placeholder="请选择" no-data-text="订单号" size="small">
         <el-option v-for="item in orderSearchArr" :key="item.value" :label="item.label" :value="item.value"></el-option>
       </el-select>
     </el-col>
     <el-col :span="5">
-      <el-input v-model="input" size="small"></el-input>
+      <el-input v-model="inputsr" size="small"></el-input>
     </el-col>
 </el-row>
 
@@ -35,13 +35,13 @@
 <el-row align="middle" type="flex" class="order-FromRow">
   <el-col :span="2">商品名称：</el-col>
   <el-col :span="5">
-    <el-input v-model="input" placeholder="请输入" size="small"></el-input>
+    <el-input v-model="inputName" placeholder="请输入" size="small"></el-input>
   </el-col>
   <el-col :span="1"></el-col>
   <el-col :span="2">订单类型：</el-col>
   <el-col :span="5">
     <el-select v-model="value10" placeholder="请选择" no-data-text="订单号" size="small">
-        <el-option v-for="item in orderTypeArr" :key="item.value" :label="item.label" :value="item.value"></el-option>
+        <el-option v-for="item in orderTypeArr" :key="item.value" :label="item.label" :value="item.label"></el-option>
     </el-select>
   </el-col>
   <el-col :span="1"></el-col>
@@ -94,7 +94,7 @@
 <!-- 第六行 -->
 <el-row align="middle" type="flex" class="order-FromRow">
   <el-col :span="2"></el-col>
-  <el-col :span="1"><el-button  type="primary" size="medium">筛选</el-button></el-col>
+  <el-col :span="1"><el-button  type="primary" size="medium" @click="changeV9(value9)">筛选</el-button></el-col>
   <el-col :span="1"></el-col>
   <el-col :span="1"> <el-button plain size="medium">导出</el-button></el-col>
 </el-row>
@@ -102,12 +102,15 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 export default {
  data() {
       return {
-        input: '',
-        input1: '',
+        // 订单搜索
+        inputsr: '',
+        // 商品名称
+        inputName:'',
+        // 下单时间
         value1: '',
         value2: '',
         pickerOptions: {
@@ -115,30 +118,37 @@ export default {
             return time.getTime() > Date.now();
           }          
         },
-       
-        options: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }, {
-          value: '选项3',
-          label: '蚵仔煎'
-        }, {
-          value: '选项4',
-          label: '龙须面'
-        }, {
-          value: '选项5',
-          label: '北京烤鸭'
-        }],
+        // 订单搜索：订单类型：
         value9: '',value10: '',value3: '',value4: '',value5: '',
         value6: '',value7: '',value8: '',
 
       }
     },
+    
+    methods:{
+      ...mapMutations('order',['updataList']),
+        changeV9(){
+        let screenArr={
+          orderSear:this.value9,
+          orderType:this.value10,
+          // 维权
+          orderWei:this.value3,
+          //订单状态
+          orderStatus:this.value4,
+          // 配送
+          distribution:this.value5,
+          // 付款方式
+          payment:this.value6,
+          //订单来源
+          Source:this.value7,
+          Start:this.value8
+        }
+        console.log(screenArr.orderWei)
+          this.updataList({type:screenArr})
+        }
+    },
      computed:{
-          ...mapState('order',['orderSearchArr','orderTypeArr','statusType','orderStatus','distributionArr','paymentArr','orderSource','orderStartArr'])
+          ...mapState('order',['orderSearchArr','orderTypeArr','statusType','orderStatus','distributionArr','paymentArr','orderSource','orderStartArr','orderListArr1','orderListArr']),
         },
 }
 </script>
