@@ -2,7 +2,7 @@
   <div>
     <el-row>
       <!-- <el-col :span="2"><div style="background:#444;height:1300px"></div></el-col> -->
-      <el-col :span="18">
+      <el-col :span="20">
       <div class="container">
           <el-row class="aaa">
             <el-col :span="2" :offset="1"><div class="container-top">客户查询</div></el-col>
@@ -19,7 +19,7 @@
                         <el-row :gutter="20">
                           <el-col :span="4"><div class="button button-on">
                             <div>全部客户<span style="display:none" class="span-on">?</span></div>
-                            <div class="num num-on">0位</div>
+                            <div class="num num-on" v-text="customer2.length">0位</div>
                           </div></el-col>
                           <el-col :span="4"><div class="button">
                             <div>新增客户
@@ -57,7 +57,7 @@
           </el-row>
         </div>
       </el-col>
-      <el-col :span="4"><div style="background:pink;height:1300px"></div></el-col>
+      <!-- <el-col :span="4"><div style="background:pink;height:1300px"></div></el-col> -->
     </el-row>
   </div>
 </template>
@@ -66,30 +66,35 @@
 import Filtrate from './Filtrate.vue'
 import Table from './Table.vue'
 import Add from './Add.vue'
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'customer',
-  components:{
+  components: {
     Filtrate,
     Table,
     Add
   },
-  computed:{
-    ...mapState('customer',['aa'])
+  data: function () {
+    return {
+      idx: 1,
+      index: '2'
+    }
   },
-  mounted:function(){
-    this.aad()
+  computed: {
+    ...mapState('customer', ['customer2'])
   },
-  methods:{
-    ...mapActions('customer',['aad'])
+  mounted: function () {
+
+  },
+  methods: {
   }
   // data:function(){
   //   return {
   //     dialogVisible: false
   //   }
   // },
-  
+
 }
 </script>
 
