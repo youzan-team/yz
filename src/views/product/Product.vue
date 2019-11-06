@@ -1,14 +1,16 @@
 <template>
     <el-row>
         <el-col :span="24">
-            <div class="grid-content bg-purple-light" style="height: 800px; border: 1px solid #eee">
+            <div class="grid-content bg-purple-light" style="height: 600px; border: 1px solid #eee">
                 <!-- 头部 -->
-                <el-row type="flex" align="middle" style="background:white;height:57px;    border:1px solid black;">
-                    <el-col :span="3">商品管理</el-col>
+                <el-row type="flex" align="middle" style="background:white;height:57px;border:1px solid black;margin:10px;">
+                    <el-col :span="3">
+                        <div style="margin-left:20px;">商品管理</div>
+                    </el-col>
                     <el-col :span="18"></el-col>
                     <el-col :span="3">
                         <i class="el-icon-edit"></i>
-                        帮助和服务
+                        <a href="">帮助和服务</a>
                     </el-col>
                 </el-row>
                 <!-- 身体 -->
@@ -27,6 +29,12 @@
                     <div class="le_filter">
                         <LeFilter></LeFilter>
                     </div>
+                    <!-- 排序 -->
+                    <div class="le_sort">
+                        <LeSort></LeSort>
+                    </div>
+                    <!-- 尾部 -->
+                    <LeFoot></LeFoot>
                 </div>
             </div>
         </el-col>
@@ -36,6 +44,10 @@
 <script>
 import LeNav from "./LeNav.vue"
 import LeFilter from "./LeFilter.vue"
+import LeSort from "./LeSort.vue"
+import LeFoot from "./LeFoot.vue"
+
+
 
 
 
@@ -43,6 +55,8 @@ export default {
     components:{
         LeNav,
         LeFilter,
+        LeSort,
+        LeFoot,
     }
 }
 </script>
@@ -54,10 +68,11 @@ export default {
     background:white;
     padding:5px;
     margin:10px;
+    height:800px;
     // 警告
     .le_warn{
         border:1px solid red;
-        background:pink;
+        background:rgb(255,245,237);
         height:50px;
         line-height:50px;
         margin:10px;
@@ -72,6 +87,10 @@ export default {
     }
     // 筛选
     .le_filter{
+        margin:20px;
+    }
+    //排序
+    .le_sort{
         margin:20px;
     }
 }
