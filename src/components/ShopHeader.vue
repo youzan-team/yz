@@ -19,6 +19,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-row{
+    width: 100%;
+}
 .head{
     height:56px;
     line-height: 56px;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col :span="2"><div style="background:#444;height:1300px"></div></el-col>
+      <!-- <el-col :span="2"><div style="background:#444;height:1300px"></div></el-col> -->
       <el-col :span="18">
       <div class="container">
           <el-row class="aaa">
@@ -22,15 +22,27 @@
                             <div class="num num-on">0位</div>
                           </div></el-col>
                           <el-col :span="4"><div class="button">
-                            <div>新增客户<span class="">?</span></div>
+                            <div>新增客户
+                              <el-tooltip class="item" effect="dark" content="最近30天新增并且没有任何交易记录的客户" placement="top">
+                                <span class="">?</span>
+                              </el-tooltip>
+                            </div>
                             <div class="num">0位</div>
                           </div></el-col>
                           <el-col :span="4"><div class="button">
-                            <div>兴趣人群<span class="">?</span></div>
+                            <div>兴趣人群                              
+                              <el-tooltip class="item" effect="dark" content="近7天有加购行为，但没有成功付款的客户" placement="top">
+                                <span class="">?</span>
+                              </el-tooltip>
+                            </div>
                             <div class="num">0位</div>
                           </div></el-col>
                           <el-col :span="4"><div class="button">
-                            <div>微信互动粉丝<span class="">?</span></div>
+                            <div>微信互动粉丝                              
+                              <el-tooltip class="item" effect="dark" content="48小时内有在公众号内发生过互动行为的粉丝" placement="top">
+                                <span class="">?</span>
+                              </el-tooltip>
+                            </div>
                             <div class="num">0位</div>
                           </div></el-col>
                         </el-row>
@@ -54,6 +66,7 @@
 import Filtrate from './Filtrate.vue'
 import Table from './Table.vue'
 import Add from './Add.vue'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'customer',
@@ -62,6 +75,15 @@ export default {
     Table,
     Add
   },
+  computed:{
+    ...mapState('customer',['aa'])
+  },
+  mounted:function(){
+    this.aad()
+  },
+  methods:{
+    ...mapActions('customer',['aad'])
+  }
   // data:function(){
   //   return {
   //     dialogVisible: false

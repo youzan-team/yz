@@ -21,7 +21,7 @@
          <el-table-column prop="price" label="配送方式" width="100" ></el-table-column>
          <el-table-column prop="price" label="实收金额" width="100" ></el-table-column>
          <el-table-column prop="price" label="订单状态" width="150" ></el-table-column>
-        <el-table-column prop="address" label="售后" width="80" ></el-table-column>
+        <el-table-column prop="address" label="售后" width="100" ></el-table-column>
 
         <el-table-column prop="tag" label="标签"  width="100"
           :filters="[{ text: '家', value: '家' }, { text: '公司', value: '公司' }]"
@@ -37,6 +37,26 @@
         </el-table-column>
       </el-table>
     </div>
+    <!-- 分页 -->
+    <el-row>
+      
+      <el-col :span="14" :offset="10">
+      <div class="block">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage4"
+          :page-sizes="[3, 6, 9]"
+          :page-size="1"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="9">
+        </el-pagination>
+    </div>
+      </el-col>
+    
+
+    </el-row>
+    
   </div>
 </template>
 
@@ -63,8 +83,24 @@ export default {
           name: "毛衣链",
           address: "保修",
           tag: "家"
+        },
+        {
+          price: "1130/1",
+          name: "毛衣链",
+          address: "保修",
+          tag: "家"
+        },
+        {
+          price: "1130/1",
+          name: "毛衣链",
+          address: "保修",
+          tag: "家"
         }
-      ]
+      ],
+        currentPage1: 5,
+        currentPage2: 5,
+        currentPage3: 5,
+        currentPage4: 4
     };
   },
   methods: {
@@ -86,15 +122,30 @@ export default {
     filterHandler(value, row, column) {
       const property = column["property"];
       return row[property] === value;
-    }
+    },
+
+// 分页
+    handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+      }
   }
+
+
 };
 </script>
 
 <style lang="scss" scoped>
+.orderTable{
 .orderList-main {
   padding: 16px;
   padding-top: 0;
   box-sizing: border-box;
+  height: 264px;
+  overflow: scroll;
 }
+}
+
 </style>

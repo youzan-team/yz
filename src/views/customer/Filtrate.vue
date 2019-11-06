@@ -21,7 +21,7 @@
     <div class="date">
       <span class="date1">关键词:</span>
       <div class="keywords">
-        <el-input  placeholder="请输入内容" style="width:100%"></el-input>
+        <el-input  placeholder="手机号/微信昵称/姓名" style="width:100%"></el-input>
       </div>
     </div>
     
@@ -31,37 +31,37 @@
           <div class="block">
             <span class="block1">客户身份:</span>
             <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+              <el-option v-for="item in options1" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
             <span class="block2">权益卡:</span>
             <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+              <el-option v-for="item in options2" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
           </div>
           <div class="block">
             <span class="block1">性别:</span>
             <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+              <el-option v-for="item in options3" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
-            <span class="block2">来源地域:</span>
+            <span class="block2">来源渠道:</span>
             <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+              <el-option v-for="item in options4" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
           </div>
           <div class="block">
             <span class="block1">来源方式:</span>
             <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+              <el-option v-for="item in options5" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
             <span class="block2">微信地域:</span>
             <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+              <el-option v-for="item in options6" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
           </div>
           <div class="block">
             <span class="block1">标签:</span>
             <el-select v-model="value" placeholder="请选择">
-              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+              <el-option v-for="item in options7" :key="item.value" :label="item.label" :value="item.value"></el-option>
             </el-select>
             <span class="block2">购买次数:</span>
             <div class="num">
@@ -140,23 +140,47 @@ export default {
       value1: '',
       value2: '',
       input3:'',
-      show: true,
-      options: [{
+      show: false,
+      options1: [{
         value: '选项1',
-        label: '黄金糕'
+        label: '全部'
       }, {
         value: '选项2',
-        label: '双皮奶'
+        label: '会员'
       }, {
         value: '选项3',
-        label: '蚵仔煎'
+        label: '非会员'
       }, {
         value: '选项4',
-        label: '龙须面'
-      }, {
-        value: '选项5',
-        label: '北京烤鸭'
+        label: '禁止购买名单'
       }],
+      options2: [{value: '选项1',label: '全部'}],
+      options3: [{
+        value: '选项1',
+        label: '全部'
+      }, {
+        value: '选项2',
+        label: '男'
+      }, {
+        value: '选项3',
+        label: '女'
+      }],
+      options4: [{value: '选项1',label: '全部'},{value: '选项2',label: '其他'}],
+      options5: [{value: '选项1',label: '手工录入'}],
+      options6: [{
+        value: '选项1',
+        label: '全部'
+      }, {
+        value: '选项2',
+        label: '北京市'
+      }, {
+        value: '选项3',
+        label: '天津市'
+      }, {
+        value: '选项4',
+        label: '河北省'
+      }],
+      options7: [{value: '选项1',label: '无标签客户'}],
       value: ''
     };
   },
