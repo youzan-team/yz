@@ -2,20 +2,20 @@
   <div class="table-list">
     <div v-if="user" class="nolist"><i class="el-icon-document"></i><span>暂无相关客户信息 </span></div>
     <div v-else class="list">
-      <el-table :data="tableData" style="width: 100%" max-height="400">
-        <el-table-column type="selection" width="55"></el-table-column>
-        <el-table-column fixed prop="date" label="客户" width="180"></el-table-column>
-        <el-table-column prop="name" label="权益卡" width="120"></el-table-column>
-        <el-table-column prop="province" label="积分" sortable width="120"></el-table-column>
-        <el-table-column prop="city" label="储值余额" sortable width="120"></el-table-column>
-        <el-table-column prop="address" label="购买次数" sortable width="120"></el-table-column>
-        <el-table-column prop="zip" label="累计消费金额" sortable width="120"></el-table-column>
-        <el-table-column prop="zip" label="上次消费时间" sortable width="120"></el-table-column>
+      <el-table :data="customer" style="width: 100%" max-height="400" >
+        <el-table-column type="selection" width="55" ></el-table-column>
+        <el-table-column fixed prop="name" label="客户" width="180"></el-table-column>
+        <el-table-column prop="identity" label="会员" width="120"></el-table-column>
+        <el-table-column prop="integral" label="积分" sortable width="120" :sort-method="(a,b) => sortMethod(a ,b , 'integral')"></el-table-column>
+        <el-table-column prop="balance" label="储值余额" sortable width="120"></el-table-column>
+        <el-table-column prop="num" label="购买次数" sortable width="120"></el-table-column>
+        <el-table-column prop="money" label="累计消费金额" sortable width="130"></el-table-column>
+        <el-table-column prop="last_time" label="上次消费时间" sortable width="130"></el-table-column>
         <el-table-column fixed="right" label="操作" width="200">
           <template slot-scope="scope">
-            <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">设置权益卡</el-button>
-            <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">加标签</el-button>
-            <el-button @click.native.prevent="deleteRow(scope.$index, tableData)" type="text" size="small">移除</el-button>
+            <el-button  type="text" size="small">设置权益卡</el-button>
+            <el-button  type="text" size="small">加标签</el-button>
+            <el-button  @click="dele(scope.$index)" type="text" size="small">移除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -40,10 +40,10 @@
           <el-row>
             <el-col :span="14" :offset="10">
               <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage4" 
-                :page-sizes="[100, 200, 300, 400]"
-                :page-size="100"
+                :page-sizes="[3, 4, 5, 6]"
+                :page-size="5"
                 layout="total, sizes, prev, pager, next, jumper"
-                :total="400">
+                :total="customer2.length">
           </el-pagination>
             </el-col>
           </el-row>
@@ -54,113 +54,93 @@
 </template>
 
 <script>
+import { mapState, mapActions, mapMutations } from 'vuex'
+
 export default {
   name: "table-list",
   data: function () {
     return {
       user: false,
-      tableData: [
+      value: '',
+      checked: false,
+      options1: [
         {
-          date: '2016-05-03',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          value: '选项1',
+          label: '对选中的人加标签'
         },
         {
-          date: '2016-05-02',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        },
-        {
-          date: '2016-05-04',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        },
-        {
-          date: '2016-05-01',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        },
-        {
-          date: '2016-05-08',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        },
-        {
-          date: '2016-05-06',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
-        },
-        {
-          date: '2016-05-07',
-          name: '王小虎',
-          province: '上海',
-          city: '普陀区',
-          address: '上海市普陀区金沙江路 1518 弄',
-          zip: 200333
+          value: '选项2',
+          label: '对筛选出来的人加标签'
         }
       ],
-      value:'',
-      checked: true,
-      options1: [{
-        value: '选项1',
-        label: '对选中的人加标签'
-      }, {
-        value: '选项2',
-        label: '对筛选出来的人加标签'
-      }],
-      options2: [{
-        value: '选项1',
-        label: '对选中的人给积分'
-      }, {
-        value: '选项2',
-        label: '对筛选出来的人给积分'
-      }, {
-        value: '选项3',
-        label: '对选中的人清空积分'
-      }, {
-        value: '选项4',
-        label: '对筛选出来的人清空积分'
-      }],
-      options3: [{
-        value: '选项1',
-        label: '对选中的人加标签'
-      }, {
-        value: '选项2',
-        label: '对筛选出来的人加标签'
-      }],
-      currentPage1: 5,
-      currentPage2: 5,
-      currentPage3: 5,
-      currentPage4: 4
+      options2: [
+        {
+          value: '选项1',
+          label: '对选中的人给积分'
+        }, {
+          value: '选项2',
+          label: '对筛选出来的人给积分'
+        }, {
+          value: '选项3',
+          label: '对选中的人清空积分'
+        }, {
+          value: '选项4',
+          label: '对筛选出来的人清空积分'
+        }
+      ],
+      options3: [
+        {
+          value: '选项1',
+          label: '对选中的人加标签'
+        }, {
+          value: '选项2',
+          label: '对筛选出来的人加标签'
+        }
+      ],
+      currentPage1: 1,
+      currentPage2: 1,
+      currentPage3: 1,
+      currentPage4: 1
     }
   },
+  mounted: function () {
+    this.getCustomer()  //获取客户
+  },
+  computed: {
+    ...mapState('customer', ['customer', 'customer2'])
+  },
   methods: {
+    ...mapActions('customer', ['getCustomer']),
+    ...mapMutations('customer', ['deleCustomer', 'article', 'page']),
     deleteRow(index, rows) {
       rows.splice(index, 1);
     },
     handleSizeChange(val) {
-      console.log(`每页 ${val} 条`);
+      //console.log(`每页 ${val} 条`);
+      this.article(val)
     },
     handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
+      //console.log(`当前页: ${val}`);
+      //console.log(val)
+      this.page(val)
+    },
+    dele(index) {   //删除客户
+      this.deleCustomer(index)
+    },
+    sortMethod(obj1, obj2, column) {
+      //console.log(obj1, obj2, column)
+      var at = Math.floor(obj1[column])
+      var bt = Math.floor(obj2[column])
+      //console.log(at, bt)
+
+      if (at > bt) {
+        return -1
+      } else {
+        return 1
+      }
+    },
+    aa(column, prop, order){
+      console.log(column, prop, order)
     }
   }
 }
@@ -197,5 +177,8 @@ export default {
     .paging2 {
     }
   }
+}
+.el-table_1_column_2 .cell {
+  white-space: pre-line; /*保留换行符*/
 }
 </style>
