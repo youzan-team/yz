@@ -31,7 +31,7 @@
                 </div></el-col>
                  <el-col :span="6">
                 <div class="grid-content ">
-                      <news3></news3>
+                      <news4></news4>
                 </div></el-col>
         </el-row>
     </div>  
@@ -46,6 +46,7 @@ import { icons } from "@/assets/index.js"
 import news1 from "./News1.vue"
 import news2 from "./News2.vue"
 import news3 from "./News3.vue"
+import news4 from "./News4.vue"
 export default {
     name:'shop',
     data:function(){
@@ -60,6 +61,7 @@ export default {
         news1,
         news2,
         news3,
+        news4,
     }
 }
 </script>

@@ -1,8 +1,8 @@
 module.exports = {
   devServer: {
     proxy: {
-      '/restapi': {
-        target: 'https://h5.ele.me',
+      '/v4': {
+        target: 'https://www.youzan.com/',
         changeOrigin: true
       },
       '/pizza': {
