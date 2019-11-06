@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-     
-   <el-container>
+  <div id="app"> 
+    <div v-if="$route.path == '/login'"><router-view name='login' ></router-view ></div>
+   <el-container v-else>
       <el-aside width="92px"><shopNav></shopNav></el-aside>
       <el-container>
         <el-header>
@@ -12,7 +12,7 @@
         </el-main>
        </el-container>
     </el-container>
-     
+ 
   </div>
 </template>
 
@@ -43,6 +43,7 @@ export default {
 html,body{
     margin: 0;
     padding: 0;
+    min-width: 1000px;
   }
 ul,li{
   list-style: none;
@@ -52,7 +53,8 @@ a{
 } 
 .el-header {
     height:56px;
-    width: 89%;
+    width: 100%;
+    padding-right:30px;
     position: fixed;
     left: 92px;top: 0;
     z-index: 999;

@@ -54,11 +54,8 @@ export default {
     &:first-child {
        text-align: center;
        line-height: 36px;
-       font-size: 15px;
+       font-size: 12px;
        color: #646566;
-       .el-col{
-           border:#efefef 1px solid;
-       }
     } 
     &:last-child {
          height: 250px;
@@ -66,16 +63,18 @@ export default {
     
   }
   .on{
-      color:#323233;
-      background: #fff;
+      color:#df4545;
+      
+      
   }
   .bg-purple {
-    background: #efffef;
+    background: #fff;
   }
  
   .grid-content {
     border-radius: 4px;
-    min-height: 36px;
+    min-height: 25px;
+    border:#efefef 1px solid;
   }
   .row-bg {
     padding: 10px 0;

@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped>
     .widget{
          background: #fff;
-         height: 350px;
+         height: 290px;
          padding-bottom: 20px;
          >.row-header{
             height: 24px; 
