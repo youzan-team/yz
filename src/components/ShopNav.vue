@@ -29,6 +29,7 @@ export default {
    background-color: #444444;
     color: #c8c9cc;
     text-align: center;
+    font-size: 14px;
    >.bang{
        height: 56px;
        padding-top: 20px;

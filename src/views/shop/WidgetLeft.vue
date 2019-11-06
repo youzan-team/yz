@@ -37,7 +37,7 @@ export default {
 <style lang="scss" scoped>
   .el-row{
       &:nth-child(3){
-          margin-bottom: 20px
+          margin-bottom: 30px
       }
   }
   .font-nor{
@@ -52,8 +52,8 @@ export default {
   
   .grid-content {
     border-radius: 4px;
-    min-height: 36px;
-    line-height: 36px;
+    min-height: 32px;
+    line-height: 32px;
     text-align: center;
     
   }

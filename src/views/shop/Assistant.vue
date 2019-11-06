@@ -37,12 +37,12 @@ export default {
 <style lang="scss" scoped>
     .assistant{
         background: #fff;
-        height: 296px;
+        height: 320px;
         padding: 10px;
         .main-left{
            border-right: #efefef 1px solid;
            >img{
-               margin: 25px 0 0 25px;
+               margin: 30px 0 25px 25px;
            }
         }
     }
