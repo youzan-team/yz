@@ -52,7 +52,12 @@ a{
 } 
 .el-header {
     height:56px;
-   margin: 0 0 0 92px;
+    width: 89%;
+    position: fixed;
+    left: 92px;top: 0;
+    z-index: 999;
+    background: #fff;
+
   }
   
   .el-aside {
@@ -64,7 +69,7 @@ a{
   
   .el-main {
     background-color: #E9EEF3;
-    margin: 0 0 0 92px;
+    margin:56px 0 0 92px;
   }
   
   body > .el-container {
