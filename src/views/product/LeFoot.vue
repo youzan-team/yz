@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="le_foot">
         <i class="el-icon-coordinate"></i>
         有赞
     </div>
@@ -12,11 +12,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div{
+.le_foot{
     width:200px;
+    height:60px;
     font-size: 40px;
-    margin-top:70px;
     color:rgb(191,191,195);
-    margin:0 auto;
+    margin:70px auto;
 }
 </style>
