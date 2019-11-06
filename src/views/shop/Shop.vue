@@ -5,14 +5,18 @@
                 <div class="grid-content bg-purple">
                      <widget></widget>
                 </div></el-col>
-            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
         </el-row>
          <el-row :gutter="20">
             <el-col :span="18">
                 <div class="grid-content bg-purple">
                      <assitant></assitant>
                 </div></el-col>
-            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+        </el-row>
+        <el-row :gutter="20">
+            <el-col :span="18">
+                <div class="grid-content bg-purple">
+                     <feature></feature>
+                </div></el-col>
         </el-row>
     </div>  
 </template>
@@ -21,12 +25,14 @@
 
 import widget from "./Widget.vue"
 import assitant from "./Assistant.vue"
+import feature from "./Feature.vue"
 
 export default {
     name:'shop',
     components: {   
         widget,
         assitant,
+        feature
     }
 }
 </script>

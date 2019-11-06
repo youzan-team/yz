@@ -52,16 +52,24 @@ a{
 } 
 .el-header {
     height:56px;
+    width: 89%;
+    position: fixed;
+    left: 92px;top: 0;
+    z-index: 999;
+    background: #fff;
+
   }
   
   .el-aside {
     background-color: #D3DCE6;
+    position: fixed;
+    left: 0;top: 0;
    
   }
   
   .el-main {
     background-color: #E9EEF3;
-    
+    margin:56px 0 0 92px;
   }
   
   body > .el-container {
