@@ -3,77 +3,112 @@
     "msg": "success",
     "data": [
       {
+        "id":"0",
         "name":"毛衣链女长款项链配饰",
         "price":"1130/1",
+        "aftersale":"售后维修",
         "custom":"李四",
-        "mode":"快递发货",
+        "mode":"上门自提",
         "money":"1130",
-        "status":"已发货"
-
+        "status":"已发货",
+        "operation":"编辑",
+        "orderNumber":"12345"
       },
       {
+        "id":"2",
         "name":"老银匠925银耳饰",
         "price":"98/1",
+        "aftersale":"售后退后",
         "custom":"张三",
         "mode":"快递发货",
         "money":"1130",
-        "status":"已发货"
+        "status":"待发货",
+        "operation":"编辑",
+        "orderNumber":"12845"
       },
       {
-        "name":"毛衣链女长款项链配饰",
-        "price":"1130/1",
-        "custom":"张三",
-        "mode":"快递发货",
+        "id":"3",
+        "name":"洁丽雅毛巾 ",
+        "price":"29/1",
+        "aftersale":"售后维修",
+        "custom":"王五",
+        "mode":"上门自提",
         "money":"1130"  ,
-        "status":"已发货"     
+        "status":"已完成" ,
+        "operation":"编辑" ,
+        "orderNumber":"12895"  
       },
       {
-        "name":"毛衣链女长款项链配饰",
-        "price":"1130/1",
+        "id":"4",
+        "name":"洁丽雅毛巾",
+        "price":"29/1",
+        "aftersale":"售后维修",
+        "custom":"王五",
+        "mode":"上门自提",
+        "money":"1130",
+        "status":"已发货",
+        "operation":"编辑",
+        "orderNumber":"12745"
+      },
+      {
+        "id":"5",
+        "name":"洁丽雅一次性洗脸巾 ",
+        "price":"130/1",
+        "aftersale":"售后维修",
         "custom":"张三",
         "mode":"快递发货",
         "money":"1130",
-        "status":"已发货"
+        "status":"待付款",
+        "operation":"编辑",
+        "orderNumber":"02845"
       },
       {
+        "id":"6",
         "name":"毛衣链女长款项链配饰",
         "price":"1130/1",
+        "aftersale":"售后维修",
         "custom":"张三",
-        "mode":"快递发货",
-        "money":"1130",
-        "status":"已发货"
+        "mode":"上门自提",
+        "money":"1200",
+        "status":"已发货",
+        "operation":"编辑",
+        "orderNumber":"12840"
       },
       {
-        "name":"毛衣链女长款项链配饰",
-        "price":"1130/1",
-        "custom":"张三",
+        "id":"7",
+        "name":"毛圈毛巾 ",
+        "price":"30/1",
+        "aftersale":"售后维修",
+        "custom":"王五",
         "mode":"快递发货",
-        "money":"1130",
-        "status":"已发货"
+        "money":"1030",
+        "status":"已发货",
+        "operation":"编辑",
+        "orderNumber":"12895"
       },
       {
+        "id":"8",
         "name":"毛衣链女长款项链配饰",
         "price":"1130/1",
+        "aftersale":"售后维修",
         "custom":"张三",
-        "mode":"快递发货",
-        "money":"1130",
-        "status":"已发货"
+        "mode":"上门自提",
+        "money":"1500",
+        "status":"已发货",
+        "operation":"编辑",
+        "orderNumber":"12845"
       },
       {
-        "name":"毛衣链女长款项链配饰",
-        "price":"1130/1",
+        "id":"9",
+        "name":"毛圈毛巾 ",
+        "price":"40/1",
+        "aftersale":"售后维修",
         "custom":"张三",
         "mode":"快递发货",
-        "money":"1130",
-        "status":"已发货"
-      },
-      {
-        "name":"毛衣链女长款项链配饰",
-        "price":"1130/1",
-        "custom":"张三",
-        "mode":"快递发货",
-        "money":"1130",
-        "status":"已发货"
+        "money":"122",
+        "status":"已发货",
+        "operation":"编辑",
+        "orderNumber":"12545"
       }
     ]
   }
