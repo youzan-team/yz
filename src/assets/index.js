@@ -2,6 +2,7 @@ import assistant from './assistant.png'
 
 export const icons ={
     assistant,
+    flag_src:'http://img.yzcdn.cn/wsc-pc-v4/icon/red-flag.png',
     page_src:"https://b.yzcdn.cn/public_files/1e97c2268d18bd0231fb5b0a512b8d7f.png",
     logo_src:"https://b.yzcdn.cn/public_files/9d2f5baed7d7bfd3b913cb508a85a974.png",
     bang_icon:"https://img.yzcdn.cn/public_files/2016/05/13/8f9c442de8666f82abaf7dd71574e997.png!60x60.jpg",

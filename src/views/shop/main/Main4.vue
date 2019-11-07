@@ -1,18 +1,18 @@
 <template>
 <div>
-    main4
+    看推荐资讯，助力店铺经营
 </div>
     
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-
+div {
+  text-align: center;
+}
 </style>
 
 
