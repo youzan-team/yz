@@ -13,68 +13,69 @@
           <el-col :span="21">
               <div class="grid-content bg-purple">
                  <keep-alive> <component :is='who'>1</component></keep-alive>
-              
               </div></el-col>
         </el-row>
     </div>
 </template>
 
 <script>
-import main1 from './main/Main1.vue'
-import main2 from './main/Main2.vue'
-import main3 from './main/Main3.vue'
-import main4 from './main/Main4.vue'
-import main5 from './main/Main5.vue'
-import main6 from './main/Main6.vue'
-import main7 from './main/Main7.vue'
+import main1 from "./main/Main1.vue";
+import main2 from "./main/Main2.vue";
+import main3 from "./main/Main3.vue";
+import main4 from "./main/Main4.vue";
+import main5 from "./main/Main5.vue";
+import main6 from "./main/Main6.vue";
+import main7 from "./main/Main7.vue";
 export default {
-    data: function(){
-        return{
-            who:'main1'
-        }
-    },
-    components: {
-        main1, main2, main3, main4, main5, main6, main7 
-	},
-	methods: {
-	tapClick: function (type) {
-    this.who = type; 
+  data: function() {
+    return {
+      who: "main1"
+    };
+  },
+  components: {
+    main1,
+    main2,
+    main3,
+    main4,
+    main5,
+    main6,
+    main7
+  },
+  methods: {
+    tapClick: function(type) {
+      this.who = type;
     }
-	},
-
-}
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
-.assistantMain{
-    margin:20px 40px 0;
-    .el-row {
-    margin-bottom:20px ;
+.assistantMain {
+  margin-left: 20px ;
+  width: 750px;
+  .el-row {
+    margin-bottom: 20px;
     &:first-child {
-       text-align: center;
-       line-height: 36px;
-       font-size: 12px;
-       color: #646566;
-    } 
-    &:last-child {
-         height: 250px;
+      text-align: center;
+      line-height: 36px;
+      font-size: 12px;
+      color: #646566;
     }
-    
+    &:last-child {
+      height: 250px;
+    }
   }
-  .on{
-      color:#df4545;
-      
-      
+  .on {
+    color: #df4545;
   }
   .bg-purple {
     background: #fff;
   }
- 
+
   .grid-content {
     border-radius: 4px;
     min-height: 25px;
-    border:#efefef 1px solid;
+    border: #efefef 1px solid;
   }
   .row-bg {
     padding: 10px 0;

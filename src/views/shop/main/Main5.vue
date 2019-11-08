@@ -1,18 +1,18 @@
 <template>
 <div>
-    main5
+   你已完成售后体验的所有任务
 </div>
     
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-
+div {
+  text-align: center;
+}
 </style>
 
 

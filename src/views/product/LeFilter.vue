@@ -56,8 +56,8 @@
           <el-col :span="2"><div class="grid-content"></div></el-col>
           <el-col :span="20">
               <div class="le_btn">
-                <el-button type="primary">主要按钮</el-button>
-                <el-button plain>朴素按钮</el-button>
+                <el-button type="primary">筛选</el-button>
+                <el-button plain>导出报表</el-button>
                 <el-button type="text">查看已生成报表</el-button>
                 <el-button type="text">清空筛选条件</el-button>
               </div>
@@ -74,9 +74,10 @@ export default {
   data() {
     return {
       input: '',
+      value:'',
       options: [{
           value: '选项1',
-          label: '全部'
+          label: '全部',
         }, {
           value: '选项2',
           label: '其它'

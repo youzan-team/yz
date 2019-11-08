@@ -1,70 +1,66 @@
 <template>
-<div>
-   <el-table
-    :data="tableData"
-    height="200"
-    style="width: 100%">
-    <el-table-column
-      prop="date"
-      label="日期"
-      width="180">
-    </el-table-column>
-    <el-table-column
-      prop="name"
-      label="姓名"
-      width="180"
-      hight="12">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址">
-    </el-table-column>
-  </el-table>
-</div>
+<div class="main2">
+ <div class="main-box">
+   <div class="desc" v-for='(val, idx) in tableData' :key="idx">
+      <img :src="icons.flag_src" alt="">
+      <span v-text="val.desc">未填写客服电话</span>
+      <span v-text="val.subDesc">填写后，可以帮助买家快速联系到您</span>
+      <span v-text="val.event">立即优化</span>
+   </div>
+ </div>
+
+ </div>
     
 </template>
 
 <script>
+import { icons } from "@/assets/index.js";
+import { mapState, mapActions } from "vuex";
 export default {
-    data() {
-      return {
-        tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-08',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-06',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-07',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }]
-      }
-    }
+  data() {
+    return {
+      icons
+    };
+  },
+  computed: {
+    ...mapState("shop", ["tableData"])
+  },
+  mounted() {
+    this.getTableData();
+  },
+  methods: {
+    ...mapActions("shop", ["getTableData"])
   }
-
+};
 </script>
 
 <style lang="scss" scoped>
-
+.main2 {
+  height: 220px;
+  min-width: 500px;
+  overflow: auto;
+  .desc {
+    padding:5px 15px;
+     img {
+          width: 12px;
+          height: 12px;
+          margin-right: 15px;
+        }
+    span {
+      font-size: 12px;
+      display: inline-block;
+      
+    
+      &:nth-child(3) {
+        color: #969799;
+      }
+      &:nth-child(4) {
+          float: right;
+          color: #155bd4;
+      } 
+    }
+  }
+}
 </style>
 
 

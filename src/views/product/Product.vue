@@ -68,7 +68,7 @@ export default {
     background:white;
     padding:5px;
     margin:10px;
-    height:800px;
+    height:900px;
     // 警告
     .le_warn{
         border:1px solid red;
