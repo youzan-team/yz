@@ -1,7 +1,7 @@
 <template>
 <div>
  <div class="orderList-main">
-    <el-table ref="filterTable" :data="orderListArr1" style="width: 100%">
+    <el-table ref="filterTable" :data="orderArrType1" style="width: 100%">
       <el-table-column prop="name" label="商品" width="160"></el-table-column>
       <el-table-column prop="price" label="单价(元)/数量" width="140"></el-table-column>
       <el-table-column prop="custom" label="买家 / 收货人" width="110"></el-table-column>
@@ -15,7 +15,7 @@
 </div>
 </template>
 <script>
-import { mapActions,mapMutations,mapState } from "vuex";
+import { mapActions,mapState,mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -23,18 +23,22 @@ export default {
     };
   },
   mounted(){
-  this.getOrderList(),
-  this.updateArr()
+    this.getOrderList()
+    console.log(this.orderArrType1)
   },
   computed:{
-      ...mapState("order",['orderListArr1']),
+      ...mapState("order",['orderArrType1']),
+      payload(){
+        let orderList=this.orderListArr1
+        return orderList
+      }
     },
  methods: {
     ...mapActions('order',["getOrderList"]),
-    ...mapMutations('order',['updateArr']),
-
+    ...mapMutations('order',['updateArr','updataList']),
     handleClick(tab, event) {
       console.log(tab, event);
+      
     },
   }
 };

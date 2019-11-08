@@ -10,7 +10,7 @@
         "custom":"李四",
         "mode":"上门自提",
         "money":"1130",
-        "status":"已发货",
+        "status":"待付款",
         "operation":"编辑",
         "orderNumber":"12345"
       },
@@ -34,7 +34,7 @@
         "custom":"王五",
         "mode":"上门自提",
         "money":"1130"  ,
-        "status":"已完成" ,
+        "status":"待付款" ,
         "operation":"编辑" ,
         "orderNumber":"12895"  
       },
@@ -70,7 +70,7 @@
         "custom":"张三",
         "mode":"上门自提",
         "money":"1200",
-        "status":"已发货",
+        "status":"待付款",
         "operation":"编辑",
         "orderNumber":"12840"
       },

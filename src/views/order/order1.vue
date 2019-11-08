@@ -24,17 +24,22 @@ export default {
     };
   },
   mounted(){
-  this.getOrderList(),
-  this.updateArr()
+  this.getOrderList()
   },
+
   computed:{
       ...mapState("order",['orderListArr1']),
+      payload(){
+        let orderList=this.orderListArr1
+        return orderList
+      }
     },
  methods: {
     ...mapActions('order',["getOrderList"]),
     ...mapMutations('order',['updateArr']),
 
     handleClick(tab, event) {
+      console.log(1)
       console.log(tab, event);
     },
   }

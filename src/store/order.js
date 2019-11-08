@@ -167,42 +167,44 @@ const order = {
     ],
     orderListArr: [],
     orderListArr1: [],
-    orderArrType1:[]
+    // order2的数据
+    orderArrType1:[],
+    orderArrType2:[],
+    // pages:1
   },
   mutations: {
     updateArr(state, payload) {
-      console.log(payload)
-      state.orderListArr1 = payload
       state.orderListArr = payload
       state.orderListArr1 = state.orderListArr.slice(0, 3)
     },
     // 分页
     page(state, payload) {
       state.page = payload
-      state.orderListArr1 = state.orderListArr.slice((state.page - 1) * state.a, state.page * state.a)
+      state.orderListArr1 = state.orderListArr.slice((payload - 1) * state.a, payload * state.a)
     },
+    //每页的行
     aa(state, payload) {
       state.a = payload
       state.orderListArr1 = state.orderListArr.slice((state.page - 1) * state.a, state.page * state.a)
     },
 
     // 筛选
-    updataList(state, payload) {
+    updataList(state,payload) {
       var listarr = []
       let listType1=[]
       state.orderListArr.map((ele) => {
         let listType=payload.type
         if (ele.mode == listType.distribution) {
           listarr.push(ele)
+        }else{
+          listarr=state.orderListArr
         }
-        if(listType.orderStatus=="待付款"){
-          console.log(1)
+        if(ele.status=="待付款"){
           listType1.push(ele)
         }
       })
       state.orderListArr1 = listarr
       state.orderArrType1=listType1
-      console.log(state.orderArrType)
     }
   },
   actions: {
