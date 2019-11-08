@@ -30,6 +30,7 @@ export default {
     color: #c8c9cc;
     text-align: center;
     font-size: 14px;
+    cursor: pointer;
    >.bang{
        height: 56px;
        padding-top: 20px;

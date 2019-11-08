@@ -76,6 +76,7 @@ export default {
     border-radius: 4px;
     min-height: 25px;
     border: #efefef 1px solid;
+    cursor: pointer;
   }
   .row-bg {
     padding: 10px 0;

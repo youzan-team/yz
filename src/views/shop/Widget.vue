@@ -8,7 +8,7 @@
       <span>编辑</span>
     </el-col>
   </el-row>
-
+  <!-- 动态组件 -->
    <el-row  class="row-main">
       <el-col :span="12">
         <div class="widge-line">
@@ -17,29 +17,38 @@
       </el-col>
      <el-col :span="12"><div class=""><widgetRight></widgetRight></div></el-col>
   </el-row>
-</div>
-  
+</div>  
 </template>
 
 <script>
 import moment from "moment";
 import widgetLeft from "./WidgetLeft.vue";
 import widgetRight from "./WidgetRight.vue";
+// import { setInterval } from 'timers';
 export default {
   name: "widget",
   data() {
-  return {
+    return {
       moment: moment().format("YYYY-MM-DD HH:mm:ss")
-    };
+    }
   },
   components: {
     widgetLeft,
     widgetRight
-  }
-  // beforeDestroy(){
-  //     this.timer = ''
+  },
+  // methods:{
+  //   fn(){
+  //     setInterval(function(){
+  //       let a=moment().format("YYYY-MM-DD HH:mm:ss")
+  //       console.log(a)
+  //       this.moment=a
+  //     },1000)
+  //   }
+  // },
+  // mounted(){
+  //   this.fn()
   // }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,6 @@
 <template>
 <div class="shop" >
+  <!-- widget -->
   <el-row :gutter="20">
     <el-col :span="18">
        <div class="grid-content bg-purple">
@@ -42,6 +43,36 @@
       </div>
     </el-col>
   </el-row>
+
+ <el-row :gutter="20">
+    <el-col :span="18">
+      <div class="grid-content ">
+        <feature></feature>
+      </div>
+    </el-col>
+    <el-col :span="6">
+      <div class="grid-content ">
+        <news4></news4>
+      </div>
+    </el-col>
+  </el-row>
+
+   <el-row :gutter="20">
+    <el-col :span="18">
+      <div class="grid-content ">
+        <feature></feature>
+      </div>
+    </el-col>
+  </el-row>
+
+<el-row :gutter="20">
+    <el-col :span="18">
+      <div class="grid-content ">
+        <feature></feature>
+      </div>
+    </el-col>
+  </el-row>
+  
 </div>  
 </template>
 

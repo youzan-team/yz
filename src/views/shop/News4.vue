@@ -48,6 +48,10 @@ export default {
     p {
       font-size: 12px;
       color: #969799;
+      cursor: pointer;
+      &:hover {
+        color: #155bd4;
+      }
     }
   }
 }
