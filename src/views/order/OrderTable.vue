@@ -38,11 +38,11 @@
 <script>
 import order1 from "./order1.vue";
 import order2 from "./order2.vue";
-import { mapMutations } from "vuex";
+import { mapMutations,mapState } from "vuex";
 export default {
   data() {
     return {
-      activeName: "first",
+      activeName: "全部",
       currentPage1: 1,
       currentPage2: 1,
       currentPage3: 1,
@@ -53,20 +53,25 @@ export default {
     order1,
     order2
   },
+  computed:{
+    ...mapState("order",['orderListArr']),
+  },
   methods: {
-    ...mapMutations("order", ["updateArr", "page", "aa"]),
+    ...mapMutations("order", ["page", "aa","updataList"]),
 
-    handleClick(tab, event) {
-      console.log(tab, event);
+    handleClick(tab) {
+      if(tab.index=="1"){
+        this.updataList({type:{}})
+      }
     },
-
     // 分页
     handleSizeChange(val) {
-      console.log(`每页 ${val} 条`);
+      // console.log(`每页 ${val} 条`);
       this.aa(val);
+      
     },
     handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
+      // console.log(`当前页: ${val}`);
       this.page(val);
     }
   }

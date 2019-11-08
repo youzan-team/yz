@@ -94,7 +94,7 @@
 <!-- 第六行 -->
 <el-row align="middle" type="flex" class="order-FromRow">
   <el-col :span="2"></el-col>
-  <el-col :span="1"><el-button  type="primary" size="medium" @click="changeV9(value9)">筛选</el-button></el-col>
+  <el-col :span="1"><el-button  type="primary" size="medium" @click="change()">筛选</el-button></el-col>
   <el-col :span="1"></el-col>
   <el-col :span="1"> <el-button plain size="medium">导出</el-button></el-col>
 </el-row>
@@ -122,12 +122,15 @@ export default {
         value9: '',value10: '',value3: '',value4: '',value5: '',
         value6: '',value7: '',value8: '',
 
+
+
+
       }
     },
     
     methods:{
       ...mapMutations('order',['updataList']),
-        changeV9(){
+        change(){
         let screenArr={
           orderSear:this.value9,
           orderType:this.value10,
@@ -143,8 +146,7 @@ export default {
           Source:this.value7,
           Start:this.value8
         }
-        console.log(screenArr.orderWei)
-          this.updataList({type:screenArr})
+        this.updataList({type:screenArr})
         }
     },
      computed:{
