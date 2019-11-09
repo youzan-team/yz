@@ -79,7 +79,7 @@
                 @current-change="handleCurrentChange"
                 :page-size="5" 
                 background
-                layout="total,prev, pager, next, jumper" :total="20">
+                layout="total,prev, pager, next, jumper" :total="productArr.length">
             </el-pagination>
         </div>
     </div>
