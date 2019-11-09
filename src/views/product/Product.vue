@@ -42,86 +42,78 @@
 </template>
 
 <script>
-import LeNav from "./LeNav.vue"
-import LeFilter from "./LeFilter.vue"
-import LeSort from "./LeSort.vue"
-import LeFoot from "./LeFoot.vue"
-
-
-
-
+import LeNav from "./LeNav.vue";
+import LeFilter from "./LeFilter.vue";
+import LeSort from "./LeSort.vue";
+import LeFoot from "./LeFoot.vue";
 
 export default {
-    components:{
-        LeNav,
-        LeFilter,
-        LeSort,
-        LeFoot,
-    }
-}
+  components: {
+    LeNav,
+    LeFilter,
+    LeSort,
+    LeFoot
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
 // 身体
-.le_body{
-    background:white;
-    padding:5px;
-    margin:10px;
-    height:900px;
-    // 警告
-    .le_warn{
-        border:1px solid red;
-        background:rgb(255,245,237);
-        height:50px;
-        line-height:50px;
-        margin:10px;
-        span{
-            float:left;
-            margin-left:10px;
-        }
-        a{
-            float:right;
-            margin-right:10px;
-        }
+.le_body {
+  background: white;
+  padding: 5px;
+  margin: 10px;
+  height: 900px;
+  // 警告
+  .le_warn {
+    border: 1px solid red;
+    background: rgb(255, 245, 237);
+    height: 50px;
+    line-height: 50px;
+    margin: 10px;
+    span {
+      float: left;
+      margin-left: 10px;
     }
-    // 筛选
-    .le_filter{
-        margin:20px;
+    a {
+      float: right;
+      margin-right: 10px;
     }
-    //排序
-    .le_sort{
-        margin:20px;
-    }
+  }
+  // 筛选
+  .le_filter {
+    margin: 20px;
+  }
+  //排序
+  .le_sort {
+    margin: 20px;
+  }
 }
 
-
-
 ///////////////////////
-  .el-row {
-    &:last-child {
-      margin-bottom: 0;
-    }
+.el-row {
+  &:last-child {
+    margin-bottom: 0;
   }
-  .el-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-
+}
+.el-col {
+  border-radius: 4px;
+}
+.bg-purple-dark {
+  background: #99a9bf;
+}
+.bg-purple {
+  background: #d3dce6;
+}
+.bg-purple-light {
+  background: #e5e9f2;
+}
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+.row-bg {
+  padding: 10px 0;
+  background-color: #f9fafc;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
    <div class="new1">  
-           <span>
+        <span>
            <img :src="icons.data[0].ads_src" alt="">
         </span>
         <span>

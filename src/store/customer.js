@@ -1,21 +1,4 @@
-import axios from 'axios'
-
-function fetch(api, callback) {
-  axios({
-    method: "GET",
-    url: 'http://localhost:8080' + api,
-  }).then(res => {
-    let data = null
-    if (res.data.err === 0) {
-      data = res.data.data
-    }
-    callback && callback(data)
-  })
-}
-
-
-
-
+import { fetch } from "./store.js"
 
 
 const customer = {

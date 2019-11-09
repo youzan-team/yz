@@ -1,21 +1,4 @@
-import axios from 'axios'
-
-function fetch(api, callback) {
-  axios({
-    method: "GET",
-    url: 'http://localhost:8080' + api,
-  }).then(res => {
-    let data = null
-    if (res.data.err === 0) {
-      data = res.data.data
-    }
-    callback && callback(data)
-  }).catch(err => {
-    console.log('接口异常', err)
-  }).then(() => {
-
-  })
-}
+import { fetch } from "./store.js"
 
 const order = {
   namespaced: true,

@@ -1,7 +1,7 @@
 {
     "err":0,
     "msg":"success",
-    "tableData": [
+    "data": [
         {
            "desc": "未创建客户分群",
            "subDesc": "通过对客户行为、属性的分析，更好的针对不同客户进行运营管理",

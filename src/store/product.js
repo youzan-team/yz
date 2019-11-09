@@ -1,22 +1,4 @@
-import axios from "axios"
-//封装数据请求方法
-function fetch(api, callback) {
-    axios({
-        method: "GET",
-        url: "http://localhost:8080" + api,
-    }).then(res => {
-        let data = null
-        if (res.data.err === 0) {
-            data = res.data.data
-        }
-        callback && callback(data)
-    }).catch(err => {
-        console.log('接口请求异常', err)
-    }).then(() => {
-        // 总是会执行
-        // 隐藏加载中
-    })
-}
+import { fetch } from "./store.js"
 
 const product = {
     namespaced: true,
