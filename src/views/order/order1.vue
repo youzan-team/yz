@@ -1,6 +1,6 @@
 <template>
-<div>
  <div class="orderList-main">
+   <div>
     <el-table ref="filterTable" :data="orderListArr1" style="width: 100%">
       <el-table-column prop="name" label="商品" width="160"></el-table-column>
       <el-table-column prop="price" label="单价(元)/数量" width="140"></el-table-column>
@@ -39,21 +39,21 @@ export default {
     ...mapMutations('order',['updateArr']),
 
     handleClick(tab, event) {
-      console.log(1)
+      // console.log(1)
       console.log(tab, event);
     },
   }
 };
 </script>
 <style lang="scss" scoped>
-div{
-    height: 280px;
 .orderList-main {
-  padding: 16px;
   padding-top: 0;
   box-sizing: border-box;
-  height: 264px;
+  height: 200px;
   overflow: scroll;
+  div{
+  min-height: 200px;
+  }
 }
 
-}
+</style>

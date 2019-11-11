@@ -95,7 +95,7 @@
 <el-row align="middle" type="flex" class="order-FromRow">
   <el-col :span="2"></el-col>
   <el-col :span="1"><el-button  type="primary" size="medium" @click="change()">筛选</el-button></el-col>
-  <el-col :span="1"></el-col>
+  <el-col :span="3"></el-col>
   <el-col :span="1"> <el-button plain size="medium">导出</el-button></el-col>
 </el-row>
 </div>
@@ -120,37 +120,32 @@ export default {
         },
         // 订单搜索：订单类型：
         value9: '',value10: '',value3: '',value4: '',value5: '',
-        value6: '',value7: '',value8: '',
-
-
-
-
+        value6: '',value7: '',value8: ''
       }
     },
-    
     methods:{
-      ...mapMutations('order',['updataList']),
+      ...mapMutations('order',['updataList','start']),
         change(){
-        let screenArr={
-          orderSear:this.value9,
-          orderType:this.value10,
-          // 维权
-          orderWei:this.value3,
-          //订单状态
-          orderStatus:this.value4,
-          // 配送
-          distribution:this.value5,
-          // 付款方式
-          payment:this.value6,
-          //订单来源
-          Source:this.value7,
-          Start:this.value8
-        }
-        this.updataList({type:screenArr})
+          let screenArr={
+            orderSear:this.value9,
+            orderType:this.value10,
+            // 维权
+            orderWei:this.value3,
+            //订单状态
+            orderStatus:this.value4,
+            // 配送
+            distribution:this.value5,
+            // 付款方式
+            payment:this.value6,
+            //订单来源
+            Source:this.value7,
+            Start:this.value8
+          }
+          this.updataList({type:screenArr})
         }
     },
      computed:{
-          ...mapState('order',['orderSearchArr','orderTypeArr','statusType','orderStatus','distributionArr','paymentArr','orderSource','orderStartArr','orderListArr1','orderListArr']),
+          ...mapState('order',['orderSearchArr','orderTypeArr','statusType','orderStatus','distributionArr','paymentArr','orderSource','orderStartArr','orderListArr','orderListArr2']),
         },
 }
 </script>
@@ -163,7 +158,7 @@ export default {
         padding: 16px;
         margin-bottom: 16px;
         .order-FromRow{
-          min-height: 50px;
+          height: 50px;
         }
       }
 </style>

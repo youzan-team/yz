@@ -3,9 +3,11 @@
     <!-- 表格导航 -->
     <div class="orderList-nav">
       <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+        <!-- 第一个 -->
         <el-tab-pane label="全部" name="全部">
           <order1></order1>
         </el-tab-pane>
+        <!-- 第二个 -->
         <el-tab-pane label="待付款" name="待付款">
           <order2></order2>
         </el-tab-pane>
@@ -25,9 +27,9 @@
             @current-change="handleCurrentChange"
             :current-page="currentPage4"
             :page-sizes="[3, 6, 9]"
-            :page-size="3"
+            :page-size="this.a"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="9"
+            :total="this.pages"
           ></el-pagination>
         </div>
       </el-col>
@@ -46,7 +48,8 @@ export default {
       currentPage1: 1,
       currentPage2: 1,
       currentPage3: 1,
-      currentPage4: 1
+      currentPage4: 1,
+      page1:0
     };
   },
   components: {
@@ -54,21 +57,26 @@ export default {
     order2
   },
   computed:{
-    ...mapState("order",['orderListArr']),
+    ...mapState("order",['orderListArr2','orderListArr1','a','pages']),
+    
   },
   methods: {
-    ...mapMutations("order", ["page", "aa","updataList"]),
+    ...mapMutations("order", ["page", "aa","updataList2","updatepages"]),
 
     handleClick(tab) {
       if(tab.index=="1"){
-        this.updataList({type:{}})
+        this.updataList2()
+        // this.aa(this.page1)
+      }
+      if(tab.index=="0"){
+        this.updatepages()
       }
     },
     // 分页
     handleSizeChange(val) {
       // console.log(`每页 ${val} 条`);
-      this.aa(val);
-      
+      this.page1=val
+      this.aa(val);    
     },
     handleCurrentChange(val) {
       // console.log(`当前页: ${val}`);

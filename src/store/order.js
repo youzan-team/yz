@@ -20,9 +20,7 @@ function fetch(api, callback) {
 const order = {
   namespaced: true,
   state: {
-    // 表格的数据
-    a: 3,
-    page: 1,
+
     // 表单下拉列表的数据
     orderSearchArr: [{
       value: '订单号',
@@ -165,46 +163,69 @@ const order = {
         label: '加星'
       }
     ],
+    //渲染表格的
     orderListArr: [],
     orderListArr1: [],
+    orderListArr2: [],
     // order2的数据
-    orderArrType1:[],
-    orderArrType2:[],
+    orderArrType1: [],
+    orderArrType2: [],
     // pages:1
+    // 表格的数据
+    a: 3,
+    page: 1,
+    pages: 9
   },
   mutations: {
     updateArr(state, payload) {
       state.orderListArr = payload
+      state.orderListArr2 = payload
       state.orderListArr1 = state.orderListArr.slice(0, 3)
     },
     // 分页
     page(state, payload) {
       state.page = payload
-      state.orderListArr1 = state.orderListArr.slice((payload - 1) * state.a, payload * state.a)
+      console.log(state.orderListArr)
+      state.orderListArr1 = state.orderListArr.slice((payload - 1) *state.a, payload * state.a)
+      state.orderArrType1 = state.orderListArr.slice((payload - 1) *state.a, payload * state.a)
     },
     //每页的行
     aa(state, payload) {
+      // console.log(payload)
       state.a = payload
       state.orderListArr1 = state.orderListArr.slice((state.page - 1) * state.a, state.page * state.a)
+      state.orderArrType1 = state.orderListArr.slice((state.page - 1) *state.a, state.page * state.a)
     },
-
-    // 筛选
-    updataList(state,payload) {
-      var listarr = []
-      let listType1=[]
+    //表单的筛选
+    updataList(state, payload) {
+      let listarr = []
       state.orderListArr.map((ele) => {
-        let listType=payload.type
-        if (ele.mode == listType.distribution) {
+        if (ele.mode === payload.type.distribution) {
           listarr.push(ele)
-        }else{
-          listarr=state.orderListArr
-        }
-        if(ele.status=="待付款"){
-          listType1.push(ele)
         }
       })
-      state.orderListArr1 = listarr
-      state.orderArrType1=listType1
+      state.orderListArr1 = listarr.slice((state.page - 1) * state.a, state.page * state.a)
+      state.orderListArr = listarr
+      state.pages = state.orderListArr.length
+    },
+    //导航栏的筛选
+    updataList2(state) {
+      let listType1 = []
+      state.orderListArr2.map((ele) => {
+        if (ele.status === "待付款") {
+          listType1.push(ele)
+          console.log(listType1)
+        }
+      })
+      state.orderArrType1=listType1.slice((state.page - 1) * state.a, state.page * state.a)
+      state.orderListArr = listType1
+      state.pages=listType1.length
+    },
+    //点击全部pages的值
+    updatepages(state){
+      state.orderListArr=state.orderListArr2
+      state.orderListArr1=state.orderListArr2
+      state.pages=state.orderListArr2.length
     }
   },
   actions: {
